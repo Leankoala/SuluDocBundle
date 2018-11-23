@@ -1,5 +1,10 @@
 {
   "name": "leankoala/suludocbundle",
   "description": "Documentation bundle for Sulu CMS (sulu.io)",
-  "license": "MIT"
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Leankoala\\SuluDocBundle\\": "src/"
+    }
+  }
 }

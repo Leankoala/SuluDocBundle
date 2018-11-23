@@ -1,0 +1,3 @@
+leankoala_sulu_doc_homepage:
+    path:     /
+    defaults: { _controller: LeankoalaSuluDocBundle:Default:index }
