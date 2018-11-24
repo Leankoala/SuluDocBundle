@@ -1,4 +1,91 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+
+    margin: 0;
+    padding: 0;
+
+    color: #1f3349;
+
+    font-weight: 400;
+    line-height: 24px;
+
+    height: 100%;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+#mainblock {
+    height: 100%;
+}
+
 .content {
     width: 1200px;
     margin: auto;
+}
+
+header {
+    color: white;
+    padding: 20px 0;
+    background-color: #2ecc71;
+    margin-bottom: 40px;
+}
+
+header .logo img {
+    height: 30px;
+    padding: 10px 10px 10px 0;
+    margin-bottom: 10px;
+}
+
+header .header-sub {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .6);
+    border-top: 1px solid rgba(255, 255, 255, .6);
+
+    font-size: 15px;
+    font-weight: 400;
+
+    height: 33px;
+}
+
+header select {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    width: 250px;
+    height: 33px;
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    margin-left: 20px;
+}
+
+header .header-sub .master-section {
+    float: left;
+}
+
+header .header-sub .search {
+    float: right;
+    padding: 3px 15px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+header .header-sub .search input[type="text"] {
+    width: 300px;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    background-color: white;
+    padding: 5px;
+    font-size: 13px;
+}
+
+header .header-sub .search input[type="text"]:focus {
+    outline: none;
 }

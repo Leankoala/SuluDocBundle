@@ -1,4 +1,7 @@
 services:
-#    leankoala_sulu_doc.example:
-#        class: Leankoala\SuluDocBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    leankoala.suludoc.twig.section.extension:
+        class: Leankoala\SuluDocBundle\Twig\SectionExtension
+        arguments: ['@sulu.content.mapper', '@sulu_website.navigation_mapper', '@sulu_core.webspace.request_analyzer']
+        public: true
+        tags:
+            - { name: twig.extension }
