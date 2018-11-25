@@ -32,8 +32,7 @@ h1 {
 header {
     color: white;
     padding: 20px 0;
-    background-color: #2ecc71;
-    margin-bottom: 40px;
+    background-color: #2283c9;
 }
 
 header .logo img {
@@ -71,7 +70,7 @@ header .header-sub .master-section {
 header .header-sub .search {
     float: right;
     padding: 3px 15px;
-    border-radius: 20px;
+    border-radius: 5px;
     background-color: white;
 }
 

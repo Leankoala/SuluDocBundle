@@ -24,9 +24,9 @@ class SectionExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_Function('sulu_doc_section', array($this, 'getSection'), array(
-                    'is_safe' => array('html'))
-            ));
+            new \Twig_Function('sulu_doc_section', array($this, 'getSection')),
+            new \Twig_Function('sulu_doc_home', array($this, 'getHomepage')),
+        );
     }
 
     /**
@@ -49,6 +49,18 @@ class SectionExtension extends \Twig_Extension
         } else {
             return $breadcrumbElements[0];
         }
+    }
+
+    public function getHomepage()
+    {
+        $webspaceKey = $this->requestAnalyzer->getWebspace()->getKey();
+        $locale = $this->requestAnalyzer->getCurrentLocalization()->getLocale();
+
+        $rootNavigation = $this->navigationMapper->getRootNavigation($webspaceKey, $locale);
+        dump($rootNavigation);
+
+
+        return $rootNavigation[0];
     }
 
     public function getName()
