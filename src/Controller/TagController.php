@@ -6,6 +6,7 @@ use Leankoala\SuluDocBundle\Twig\SectionExtension;
 use Sulu\Bundle\ContentBundle\Document\PageDocument;
 use Sulu\Bundle\ContentBundle\Repository\NodeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Yaml\Yaml;
@@ -28,7 +29,7 @@ class TagController extends Controller
             $languageCode = 'en';
 
             $exclude = null;
-            $webspaceKey = 'example';
+            $webspaceKey = 'docs';
             $limitResult = 1;
             $tagNames = 'sulu';
             $resolvedTags = [$tag->getId()];
@@ -87,8 +88,9 @@ class TagController extends Controller
             }
         }
 
-        $yaml = Yaml::dump($results);
 
-        return new Response($yaml);
+        $json = json_encode($results);
+
+        return new JsonResponse($results);
     }
 }
