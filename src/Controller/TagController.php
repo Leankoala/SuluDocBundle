@@ -26,12 +26,8 @@ class TagController extends Controller
         $tag = $tagManager->findByName($tag);
 
         if ($tag) {
-            $languageCode = 'en';
-
             $exclude = null;
             $webspaceKey = 'docs';
-            $limitResult = 1;
-            $tagNames = 'sulu';
             $resolvedTags = [$tag->getId()];
 
             $filterConfig = [
