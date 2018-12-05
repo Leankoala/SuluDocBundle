@@ -28,6 +28,8 @@ class TagController extends Controller
         if ($tag) {
             $exclude = null;
             $webspaceKey = 'docs';
+            // $webspaceKey = 'example';
+            
             $resolvedTags = [$tag->getId()];
 
             $filterConfig = [
@@ -61,13 +63,22 @@ class TagController extends Controller
 
                 $domain = $request->getSchemeAndHttpHost();
 
+                //dump($content['except']);
+                $plainCategories = $content['extension']['excerpt']['categories'];
+                $categories = [];
+
+                foreach ($plainCategories as $category) {
+                    $categories[] = $category['name'];
+                }
+
                 if (array_key_exists('blocks', $content['content'])) {
                     $blocks = $content['content']['blocks'];
                     foreach ($blocks as $block) {
                         if ($block['type'] == self::SECTION_HEADING_KEY) {
                             $results[] = [
                                 'title' => $block['text'],
-                                'url' => $domain . $node['urls'][$lang] . '#' . SectionExtension::getSlug($block['text'])
+                                'url' => $domain . $node['urls'][$lang] . '#' . SectionExtension::getSlug($block['text']),
+                                'categories' => $categories
                             ];
                             $withBlocks = true;
                         }
@@ -78,7 +89,8 @@ class TagController extends Controller
                 if (!$withBlocks) {
                     $results[] = [
                         'title' => $node['title'],
-                        'url' => $domain . $node['urls'][$lang]
+                        'url' => $domain . $node['urls'][$lang],
+                        'categories' => $categories
                     ];
                 }
             }
