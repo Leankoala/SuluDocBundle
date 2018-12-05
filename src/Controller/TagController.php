@@ -29,7 +29,7 @@ class TagController extends Controller
             $exclude = null;
             $webspaceKey = 'docs';
             // $webspaceKey = 'example';
-            
+
             $resolvedTags = [$tag->getId()];
 
             $filterConfig = [
