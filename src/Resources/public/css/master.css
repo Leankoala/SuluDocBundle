@@ -73,6 +73,7 @@ header select {
     font-weight: 400;
     font-size: 13px;
     margin-left: 20px;
+    padding-left: 10px;
 }
 
 header .header-sub .master-section {
