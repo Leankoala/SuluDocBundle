@@ -35,10 +35,22 @@ header {
     background-color: #2283c9;
 }
 
+header .logo {
+    font-size: 34px;
+    text-decoration: none;
+}
+
+header a .logo p {
+    text-decoration: none;
+    color: white;
+}
+
 header .logo img {
-    height: 30px;
-    padding: 10px 10px 10px 0;
+    height: 50px;
+    _padding: 10px 10px 10px 0;
     margin-bottom: 10px;
+    float: left;
+    margin-right: 20px;
 }
 
 header .header-sub {
